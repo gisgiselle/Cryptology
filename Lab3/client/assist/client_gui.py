@@ -31,11 +31,11 @@ class ChatRoom(object):
         self.send_msg = Button(self.message_input, text='Send',
                                  command=self.send_message,
                                  fg='white', bg='blue')
-        self.export_key = Button(self.message_input, text='Import key',
+        self.import_key = Button(self.message_input, text='Import key',
                                  command=self.send_message,
                                  fg='white', bg='blue')
         self.send_msg.pack(side=RIGHT)
-        self.export_key.pack(side=RIGHT)
+        self.import_key.pack(side=RIGHT)
         self.message_ipt_text.pack(side=LEFT,fill=X)
         self.message_input.pack(anchor=N)
 
