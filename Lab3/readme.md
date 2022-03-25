@@ -7,9 +7,13 @@ This lab is an encrypter chat GUI which allows the user to:
 
 HOW TO COMPILE
 1 To compile the program you must access the initial folder "Lab 3" and then access the folder "server" 
+
 2 to initialize the chat server you must type python chat_server.py
+
 3 To initialize the client you must type python chat_client.py
+
 4 The DBPATH,HOST and PORT are specified and can be modified on the filechat_server.py
+
 5 Right now, the configuration is the following and can work on each computer, as the dbpath is cannot be changed, 
 the host is the localhost and the port can be easily modified.
 DBPATH = 'database/userinfo.db'
