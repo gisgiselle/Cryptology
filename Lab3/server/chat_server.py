@@ -1,8 +1,3 @@
-'''
- server of the chat 
-
-
-'''
 from socket import *
 from database import store
 from time import ctime, sleep
@@ -50,7 +45,7 @@ while True:
                 udpSerSock.sendto(package, addr)
             message = f'{s_name} comes in\n'
             for na, ad in AD.items(): 
-                package = process.assemble('receive', 'server', na, len(message), message)
+                package = process.assemble('Encrypted message', 'server', na, len(message), message)
                 udpSerSock.sendto(package, ad)
     elif sign == 'receive':
         udpSerSock.sendto(package, AD[r_name])
@@ -79,5 +74,7 @@ while True:
             package = process.assemble('login', 'server', 'unknown', len('success'), 'fail')
             udpSerSock.sendto(package, addr)
     print(AD)
+    #print(pub_keys)
+
 
 udpSerSock.close()

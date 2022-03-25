@@ -1,7 +1,3 @@
-'''
-GUI of the client
-
-'''
 from time import sleep, ctime
 from tkinter import *
 
@@ -46,5 +42,3 @@ class ChatRoom(object):
         pass
     def import_key(self):
         pass
-
-

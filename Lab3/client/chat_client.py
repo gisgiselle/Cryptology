@@ -1,7 +1,6 @@
 '''
 Client script for the chat.
 To run you must install pycripto and base32hex for base32 decoding
-
 Based on code by Tony Code
 '''
 import rsa
