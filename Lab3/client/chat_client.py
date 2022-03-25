@@ -25,6 +25,11 @@ ADDR = (HOST, PORT)
 
 pub, priv = rsa.newkeys(1024)
 
+def saveToFile(x):
+    file = open("publicKeyFile.txt","w")
+    file.write(x)
+    file.close()
+
 class ChatRoomGUI(ChatRoom):
     """docstring for ChatRoom"""
     def __init__(self,Client, ADDR, name):
@@ -42,6 +47,7 @@ class ChatRoomGUI(ChatRoom):
         s_name = self.name
         r_name = 'server'
         pub_key = self.turn_pub_key_to_string(pub_key)
+        saveToFile(pub_key)
         length = len(pub_key)
         package = self.assemble(sign, s_name, r_name, length, pub_key)
         self.client.sendto(package, self.addr)
