@@ -31,8 +31,8 @@ class ChatRoom(object):
         self.send_msg = Button(self.message_input, text='Send',
                                  command=self.send_message,
                                  fg='white', bg='blue')
-        self.import_key = Button(self.message_input, text='Import key',
-                                 command=self.send_message,
+        self.import_key = Button( text='Import key',
+                                 command=self.import_key,
                                  fg='white', bg='blue')
         self.send_msg.pack(side=RIGHT)
         self.import_key.pack(side=RIGHT)
@@ -44,6 +44,7 @@ class ChatRoom(object):
 
     def recv_message(self):
         pass
-
+    def import_key(self):
+        pass
 
 
