@@ -1,42 +1,29 @@
 pragma solidity ^0.5.0;
 
 contract TodoList {
-  uint public taskCount = 0;
+    uint public taskCount = 0;
+    
+    //model tasks 
+    struct Task{
+        uint id; 
+        string content; 
+        bool completed; 
+    }
+    //put them in db
+    //no hay manera de saber lo grande que es y si se tienen que obtener los elementos se debe llamar una vez por elemento
+    mapping(uint => Task) public tasks; 
 
-  struct Task {
-    uint id;
-    string content;
-    bool completed;
-  }
+    //poblar array
+    constructor() public{
+        createTask("Check out"); 
+    }
 
-  mapping(uint => Task) public tasks;
+    //put struct in mapping
+    function createTask(string memory _content) public{
+        taskCount ++;
+        tasks[taskCount] = Task(taskCount, _content, false); //meter en array y menciona info
 
-  event TaskCreated(
-    uint id,
-    string content,
-    bool completed
-  );
+    }
 
-  event TaskCompleted(
-    uint id,
-    bool completed
-  );
-
-  constructor() public {
-    createTask("Check out dappuniversity.com");
-  }
-
-  function createTask(string memory _content) public {
-    taskCount ++;
-    tasks[taskCount] = Task(taskCount, _content, false);
-    emit TaskCreated(taskCount, _content, false);
-  }
-
-  function toggleCompleted(uint _id) public {
-    Task memory _task = tasks[_id];
-    _task.completed = !_task.completed;
-    tasks[_id] = _task;
-    emit TaskCompleted(_id, _task.completed);
-  }
 
 }
