@@ -1,8 +1,10 @@
+//var web3 = require('web3')
 App = {
     loading: false,
     contracts: {},
   
     load: async () => {
+      
       await App.loadWeb3()
       await App.loadAccount()
       await App.loadContract()
@@ -50,7 +52,7 @@ App = {
     loadContract: async () => {
       // Create a JavaScript version of the smart contract
       const todoList = await $.getJSON('todoList.json')
-      App.contracts.todoList = TruffleContract(todoList)
+      App.contracts.todoList = TruffleContract(todoList)// maybe 
       App.contracts.todoList.setProvider(App.web3Provider)
   
       // Hydrate the smart contract with values from the blockchain
