@@ -2,7 +2,10 @@
 
 pragma solidity ^0.5.0;
 
+//smart contract creation
+
 contract TodoList {
+    //counts each of the tasks (rides) inside the list
     uint public taskCount = 0;
     
     //model tasks 
