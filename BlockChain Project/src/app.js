@@ -116,7 +116,8 @@ App = {
         $newTaskTemplate.show()
       }
     },
-
+    
+    //function to add new tasks from the client side of the application
     createTask: async () => {
       App.setLoading(true)
       const content = $('#newTask').val()
