@@ -4,7 +4,7 @@
 
 #### Cryptology and Security Tools February - June 2022
 
-In this file, we will explain the system functionality for the Carpooling Project.
+In this file, we will explain the system functionality for the Carpooling Project. In each file of the project, each function is explained in more detailed, this is an overview of the general functionalities.
 
 ---
 
