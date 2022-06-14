@@ -67,7 +67,14 @@ Let's examine each element from the structure
       We use the default web3 configuration provided by Metamask.
       
       We load the smart contract data from the blockchain, creating a JavaScript representation of the smart contract using the Truffle Contract Library
+      
+      If the next loading screen appears, then you need to connect to the blockchain, importing one of the accounts from Ganache into Metamask. 
+      ![Loading Message](https://user-images.githubusercontent.com/47361500/173686906-648d6327-0578-42a1-9340-741774d27aed.png)
+      
+      If connected correctly, you should see all of the contract and account data loaded.
+      
     - [Index](src/index.html) 
+   
 * Test
 * Bs-Config
     [File](../../bs-config.json)
@@ -82,7 +89,7 @@ Let's examine each element from the structure
   
     
 
-</ul>
+
 
 
 
