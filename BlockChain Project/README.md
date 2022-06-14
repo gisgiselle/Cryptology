@@ -17,6 +17,7 @@ Carpooling Application with Blockchain
 
 <h2>Follow the next steps to run the project</h2>
 <ol>
+    <li>If you change any settings inside the Ganache settings page, such as the port, make sure you change the file truffle-config.js, reflecting those changes</li>
     <li>Open Ganache</li>
     <li>Import account from Ganache into Metamask</li>
     <li>Run the following commands on the terminal</li> 
