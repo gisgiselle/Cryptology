@@ -22,6 +22,8 @@ contract TodoList {
     //put them in db
     //no hay manera de saber lo grande que es y si se tienen que obtener los elementos se debe llamar una vez por elemento
     mapping(uint => Task) public tasks; 
+    
+    //event triggered each time a task is created 
     event TaskCreated(
         uint id, 
         string content, 
