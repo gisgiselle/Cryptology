@@ -77,7 +77,10 @@ Let's examine each element from the structure
       HTML code for list
    
 * Test
-   Tests to ensure that the ride list smart contract works. We use testing for these reasons:
+
+   _Tests to ensure that the ride list smart contract works._
+   
+   We use testing for these reasons:
    1. Ensure code on the Ethereum blockchain is immutable.
    2. Minimize amount of Ether we have to pay
    3. Prevent the waste of Ether when functions do not behave the way we expect.
