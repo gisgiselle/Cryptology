@@ -5,9 +5,14 @@ App = {
   
     load: async () => {
       
+       //Load web3 default configuration specified by metamask
       await App.loadWeb3()
       await App.loadAccount()
+       //load the smart contract data from the blockchain. 
+       //then, the smart contract data is loaded with web3 
+       //this allows us to list the rides in the todolist
       await App.loadContract()
+        //list the rides in the todolist. 
       await App.render()
     },
   
