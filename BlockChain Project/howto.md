@@ -18,7 +18,7 @@ The application allows the user to
 
 <h2> Project Structure </h2>
 ![alt text](imgs/ProjectStructure.png "Project folders and")
-Once the dependencies mentioned on READ ME [Read me file](https://github.com/gisgiselle/Cryptology/tree/main/BlockChain%20Project#readme) file are installed
+Once the dependencies mentioned on READ ME [File](<https://github.com/gisgiselle/Cryptology/tree/main/BlockChain%20Project#readme>) file are installed
 <ul>
     <ul>
         <li>truffle migrate reset</li>
