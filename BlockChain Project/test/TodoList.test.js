@@ -1,10 +1,17 @@
+//File to test that the smart contract works correctly
+
+
+//We require the contract made in this file
 const TodoList = artifacts.require('./TodoList.sol')
 
+  //tests within the callback function. 
+//The accounts represents all the accounts on our blockchain provided by Ganache
 contract('TodoList', (accounts) => {
   before(async () => {
     this.todoList = await TodoList.deployed()
   })
 
+//checks if contract was deployed to the blockchain properly by inspecting address
   it('deploys successfully', async () => {
     const address = await this.todoList.address
     assert.notEqual(address, 0x0)
@@ -13,7 +20,7 @@ contract('TodoList', (accounts) => {
     assert.notEqual(address, undefined)
   })
 
-  
+  //checks that smart contract lists rides properly by checking the default task created in the initializer function
   it('lists tasks', async () => {
     const taskCount = await this.todoList.taskCount()
     const task = await this.todoList.tasks(taskCount)
