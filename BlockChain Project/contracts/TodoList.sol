@@ -10,8 +10,13 @@ contract TodoList {
     
     //model tasks 
     struct Task{
+        //unique identifier for the struct. 
+        //uint for unsigned integer (non-negative integer)
         uint id; 
+        //Text specifying the data for each ride in the list containing a string
         string content; 
+        //checkbox status of ride. If it is true, the task will be already ordered or reserved and
+        //checked off from the ride list
         bool completed; 
     }
     //put them in db
@@ -23,17 +28,18 @@ contract TodoList {
         bool completed
     ); 
 
-
-
-
     //poblar array
     constructor() public{
         createTask("Check out"); 
     }
 
-    //put struct in mapping
+    //allows users to add new rides to the ride list by default so the console lists it
+    //string memory _content is used to specify that it will persist in the memory
+    
     function createTask(string memory _content) public{
+        //create an id for the new ride by incrementing taskCount by 1
         taskCount ++;
+        //Store the new ride on the blockchain
         tasks[taskCount] = Task(taskCount, _content, false); //meter en array y menciona info
         emit TaskCreated(taskCount, _content, false); 
 
