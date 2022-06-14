@@ -26,4 +26,9 @@ Carpooling Application with Blockchain
         <li>npm run dev</li>
     </ol>
 </ol>
+Once the project is running, you should type localhost:3000 in your web browser to get the following screen:
+![AppPreview](https://user-images.githubusercontent.com/47361500/173672123-c9a3b23b-4b6a-4256-a225-9714ece580c9.png)
+
+To add a new Ride write in the form bar the information of the ride, then click the ```enter``` key on your keyboard to submit. 
+Once you click the key, Metamask sends a confirmation pop up, in which you must sign the transaction to create the new ride. 
 
