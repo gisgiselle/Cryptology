@@ -32,6 +32,8 @@ contract('TodoList', (accounts) => {
 
   })
 
+  //checks that the task created event is triggered when a new task is created
+  //We inspect the data from the log information to ensure the event is triggered properly
   it('creates tasks', async () => {
     const result = await this.todoList.createTask('A new task')
     const taskCount = await this.todoList.taskCount()
