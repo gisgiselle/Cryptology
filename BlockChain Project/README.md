@@ -42,5 +42,5 @@ To add a new Ride write in the form bar the information of the ride, such as tim
 
 We were not able to add a screenshot for this part, as there was an error indicating that we had no gas left to complete the transaction. We expect this error to be fixed in the future.
 
-
+Finally, when a ride is added, another user can check the ride in order to reserve it, using the box next to the ride description. Once checked, the ride will not appear in the list of rides in the user GUI.
 
