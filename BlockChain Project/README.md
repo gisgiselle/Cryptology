@@ -34,7 +34,7 @@ Carpooling Application with Blockchain
 
 ## How to run
 <ol>
-    <li>If you change any settings inside the Ganache settings page, such as the port, make sure you change the file truffle-config.js, reflecting those changes</li>
+    <ul>If you change any settings inside the Ganache settings page, such as the port, make sure you change the file truffle-config.js, reflecting those changes</li>
     <li>Open Ganache</li>
     <li>Import account from Ganache into Metamask</li>
     <li>Run the following commands on the terminal</li> 
@@ -84,3 +84,7 @@ If you don't have a Metamask account created you must follow the next steps
 ![pkk](https://user-images.githubusercontent.com/56810855/174200410-029aa63f-c40f-468a-956b-6da27aa8026b.PNG)
  
  
+## Team members
+* Rodrigo Gerardo Moran Valencia
+* Brenda Giselle Molina
+* Juan Carlos Ortiz de Montellano Bochelen
