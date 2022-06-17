@@ -7,6 +7,7 @@ Carpooling Application with Blockchain
 
 <h3 align="center">This project implements a solution to carsharing applications, removing the intermediary And allowing users to connect instantly by using blockchain. </h3>
 
+
 ### Built With
 * [Next.js](https://nextjs.org/)
 * [Bootstrap](https://getbootstrap.com/)
@@ -83,6 +84,8 @@ If you don't have a Metamask account created you must follow the next steps
  
 ![pkk](https://user-images.githubusercontent.com/56810855/174200410-029aa63f-c40f-468a-956b-6da27aa8026b.PNG)
  
+## Common Errors found
+When adding a new ride an error indicating that we had no gas left to complete the transaction. We expect this error to be fixed in the future.
  
 ## Team members
 * Rodrigo Gerardo Moran Valencia
