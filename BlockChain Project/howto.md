@@ -42,6 +42,40 @@ Let's examine each element from the structure
      - Contains the compiled bytecode version of the Solidity smart contract code that can be run on a the Ethereum Virtual Machine (EVM)
      - Contains a JSON representation of the smart contract functions that can be exposed to external clients
 
+      Here we have the code for the smart contract. At the beginning we are difning the version used. Aftwerwards we declare a public tashCount
+      initialized at 0. In the mapping method we take an id, content and a value from a boolean which will help to store in a sort of database ou
+      parameters from a publishing method. 
+      Then our constructor will help us fill an array with our tasks or car rides. Finally, our create tasks method store the information into the
+      blockchain. 
+      
+
+      pragma solidity ^0.5.0;
+
+      contract TodoList {
+          uint public taskCount = 0;
+
+          struct Task{
+              uint id; 
+              bool completed; 
+          }
+          mapping(uint => Task) public tasks; 
+          event TaskCreated(
+              uint id, 
+              string content, 
+              bool completed
+          ); 
+
+          constructor() public{
+              createTask("Check out"); 
+          }
+
+          function createTask(string memory _content) public{
+              taskCount ++;
+              tasks[taskCount] = Task(taskCount, _content, false);
+              emit TaskCreated(taskCount, _content, false); 
+          }
+      }
+
 
 * Contracts Directory
 
@@ -61,6 +95,16 @@ Let's examine each element from the structure
         We add the variable ToDoList  to the manifest of deployed contracts to ensure that it gets deployed when we run the migrations.
      -  [ToDoList](contracts/TodoList.sol) The contract that manages the car rides. yo
 
+
+       This is the only code in the mogrations directory. Basically it stores the smart contract on  a contant which is later deployed to our project. 
+       
+       const TodoList = artifacts.require("./TodoList.sol");
+       module.exports = function(deployer) {
+         deployer.deploy(TodoList);
+       };
+
+
+
 * Src
     - [App](src/app.js) 
       Web3 is used as it allows the client-side application to talk to the blockchain. 
@@ -72,7 +116,29 @@ Let's examine each element from the structure
       ![Loading Message](https://user-images.githubusercontent.com/47361500/173686906-648d6327-0578-42a1-9340-741774d27aed.png)
       
       If connected correctly, you should see all of the contract and account data loaded.
-      
+     
+    This is an importantant method as we get the JSON file that our app will interact with. We must remember that this JSON files are compiled from the         .sol smart contract. This method only sets a conection with a web3 provider. 
+     
+     loadContract: async () => {
+       const todoList = await $.getJSON('todoList.json')
+       App.contracts.todoList = TruffleContract(todoList)
+       App.contracts.todoList.setProvider(App.web3Provider)
+       App.todoList = await App.contracts.todoList.deployed()
+     }
+
+
+      Here we have a function which helps create tasks. We  call the method setLoading with a true parameter. 
+      Then we store the content *newTask* or car ride in a variable called *content*. 
+      We then create the task sending it through the method createTask. 
+      Finally we reload the page with the task created. 
+     
+     createTask: async () => {
+         App.setLoading(true)
+         const content = $('#newTask').val()
+         await App.todoList.createTask(content)
+         window.location.reload()
+       }     
+     
     - [Index](src/index.html) 
       HTML code for list
    
@@ -91,7 +157,20 @@ Let's examine each element from the structure
     This configuration tells lite-server to expose all the files in the [src](src/) and [build](build/contracts) directories to the root of the web server.
     We also create the alias `vendor` so that any file in the [Node Modules Directory](node_modules/) appear in the vendor route.
     
+    This is the code for the BS-Config. Here we have an object with directions to the base directories which include both src and contracts. 
+    We also added a vendor from our node modules which is one of the dependencies that is needed to run the project. 
 
+    {
+        "server": {
+          "baseDir": [
+            "./src",
+            "./build/contracts"
+          ],
+          "routes": {
+            "/vendor": "./node_modules"
+          }
+        }
+      }
     
 
 
